@@ -4,14 +4,20 @@
   "main": "./dist/main.js",
   "license": "MIT",
   "scripts": {
+    "build-renderer": "webpack --config ./webpack.renderer.config.js",
+    "watch-renderer": "webpack-dev-server --config ./webpack.renderer.config.js --watch",
     "watch-main": "webpack --config ./webpack.main.config.js --watch",
     "start-electron": "electron .",
     "dev": "node ./bin/electron-starter"
   },
   "dependencies": {
-    "electron": "^8.2.0"
+    "electron": "^8.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "eslint": "^6.8.0",
@@ -20,9 +26,12 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
+    "html-webpack-plugin": "^4.0.4",
+    "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }

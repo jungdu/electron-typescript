@@ -10,8 +10,10 @@ function createWindow() {
     },
   });
 
+  win.loadURL("http://localhost:8080/");
   // and load the index.html of the app.
-  win.loadFile("./index.html");
+  // 실제로 실행될 때 빌드 후.
+  // win.loadFile("./dist/index.html");
 }
 
 app.on("ready", createWindow);

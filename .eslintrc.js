@@ -25,6 +25,21 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    "quotes": [2, "double"]
+    "quotes": [2, "double"],
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", "tsx"] }],
+  },
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: {
+          resolve: {
+            alias: {
+              '~': path.join(__dirname, 'src/app'),
+            },
+            extensions: ['.js', '.jsx', '.ts', '.tsx', '.mjs'],
+          },
+        },
+      },
+    },
   },
 };

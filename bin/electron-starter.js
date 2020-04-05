@@ -6,6 +6,7 @@ main();
 
 function main(){
   const mainFilePath = getMainFilePath();
+  watchRenderer();
   clearFile(mainFilePath);
   watchMainFile(mainFilePath);
   buildMain();
@@ -51,4 +52,13 @@ function watchMainFile(mainFilePath){
     }
     mainProcess = startElectron();
   })
+}
+
+function watchRenderer(){
+  return spawn("yarn", ["watch-renderer"], {
+    shell: true,
+    env: process.env,
+    stdio: "inherit"
+  })
+  .on("error", spawnError => console.error(spawnError));
 }
