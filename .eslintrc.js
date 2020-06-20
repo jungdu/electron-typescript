@@ -24,11 +24,13 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'simple-import-sort'
   ],
   rules: {
     "quotes": [2, "double"],
     "react/jsx-filename-extension": [1, { "extensions": [".jsx", "tsx"] }],
     '@typescript-eslint/no-var-requires': 0,
     "@typescript-eslint/no-use-before-define": "off",
+    "simple-import-sort/sort": "error"
   },
 };
