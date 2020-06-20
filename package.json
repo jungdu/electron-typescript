@@ -8,7 +8,8 @@
     "watch-renderer": "webpack-dev-server --config ./webpack.renderer.config.js --watch",
     "watch-main": "webpack --config ./webpack.main.config.js --watch",
     "start-electron": "electron .",
-    "dev": "node ./bin/electron-starter"
+    "dev": "node ./bin/electron-starter",
+    "test": "jest"
   },
   "dependencies": {
     "electron": "^8.2.0",
@@ -16,6 +17,7 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.0",
     "@types/react": "^16.9.32",
     "@types/react-dom": "^16.9.6",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
@@ -30,12 +32,32 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "eslint-plugin-simple-import-sort": "^5.0.3",
     "html-webpack-plugin": "^4.0.4",
+    "jest": "^26.0.1",
     "prettier": "^2.0.5",
     "source-map-loader": "^0.2.4",
+    "ts-jest": "^26.1.0",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "\\.test\\.tsx?$",
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "tsx"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": true
+      }
+    },
+    "preset": "ts-jest",
+    "testMatch": null
   }
 }

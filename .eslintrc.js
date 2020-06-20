@@ -32,6 +32,7 @@ module.exports = {
     "react/jsx-filename-extension": [1, { "extensions": [".jsx", "tsx"] }],
     '@typescript-eslint/no-var-requires': 0,
     "@typescript-eslint/no-use-before-define": "off",
-    "simple-import-sort/sort": "error"
+    "simple-import-sort/sort": "error",
+    "react/prop-types": "off"
   },
 };
