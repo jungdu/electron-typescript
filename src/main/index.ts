@@ -4,7 +4,7 @@ import { init } from "./ipc";
 
 init();
 
-function createWindow() {
+function createWindow(): void {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,

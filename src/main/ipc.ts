@@ -6,11 +6,13 @@ interface InvokeArg<T extends Message> extends Pick<T, "chanel"> {
   handler: HandlerEvent<Electron.IpcMainInvokeEvent, T>;
 }
 
-export function registerInvokeHandle<T extends Message>(arg: InvokeArg<T>) {
+export function registerInvokeHandle<T extends Message>(
+  arg: InvokeArg<T>
+): void {
   ipcMain.handle(arg.chanel, (event, message) => arg.handler(event, message));
 }
 
-export function init() {
+export function init(): void {
   registerInvokeHandle<GetOs>({
     chanel: "GET_OS",
     handler: () =>

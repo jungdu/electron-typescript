@@ -2,10 +2,10 @@ import { invoke } from "@renderer/ipc";
 import { GetOs } from "@shared/ipc";
 import * as React from "react";
 
-export default function App() {
+const App: React.FC = () => {
   const [osInfo, setOsInfo] = React.useState<string>("🤔");
 
-  function handleClick() {
+  function handleClick(): void {
     invoke<GetOs>({ chanel: "GET_OS", message: "" }).then((resposne) => {
       console.log(resposne);
       setOsInfo(resposne);
@@ -20,4 +20,6 @@ export default function App() {
       </p>
     </div>
   );
-}
+};
+
+export default App;
