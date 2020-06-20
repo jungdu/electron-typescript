@@ -1,5 +1,9 @@
 import { app, BrowserWindow } from "electron";
 
+import { init } from "./ipc";
+
+init();
+
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
