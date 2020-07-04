@@ -9,7 +9,8 @@
     "watch-main": "webpack --config ./webpack.main.config.js --watch",
     "start-electron": "electron .",
     "dev": "node ./bin/electron-starter",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "electron": "^8.2.0",
@@ -17,6 +18,8 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.0",
+    "@testing-library/react": "^10.4.3",
     "@types/jest": "^26.0.0",
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.9.8",
@@ -63,6 +66,7 @@
       "@main/(.*)": "<rootDir>/src/main/$1",
       "@renderer/(.*)": "<rootDir>/src/renderer/$1",
       "@shared/(.*)": "<rootDir>/src/shared/$1"
-    }
+    },
+    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"]
   }
 }
